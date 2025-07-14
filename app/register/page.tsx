@@ -92,12 +92,13 @@ export default function Register() {
           confirmPassword?: string;
         } = {};
 
-        error.errors.forEach((err) => {
-          if (err.path[0] === "email") formattedErrors.email = err.message;
-          if (err.path[0] === "password")
-            formattedErrors.password = err.message;
-          if (err.path[0] === "confirmPassword")
-            formattedErrors.confirmPassword = err.message;
+        // Use 'issues' instead of 'errors'
+        error.issues.forEach((issue) => {
+          if (issue.path[0] === "email") formattedErrors.email = issue.message;
+          if (issue.path[0] === "password")
+            formattedErrors.password = issue.message;
+          if (issue.path[0] === "confirmPassword")
+            formattedErrors.confirmPassword = issue.message;
         });
 
         setErrors(formattedErrors);

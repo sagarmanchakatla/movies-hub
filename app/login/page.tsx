@@ -41,10 +41,11 @@ export default function Login() {
     } catch (error) {
       if (error instanceof z.ZodError) {
         const formattedErrors: { email?: string; password?: string } = {};
-        error.errors.forEach((err) => {
-          if (err.path[0] === "email") formattedErrors.email = err.message;
-          if (err.path[0] === "password")
-            formattedErrors.password = err.message;
+        // Use 'issues' instead of 'errors'
+        error.issues.forEach((issue) => {
+          if (issue.path[0] === "email") formattedErrors.email = issue.message;
+          if (issue.path[0] === "password")
+            formattedErrors.password = issue.message;
         });
         setErrors(formattedErrors);
       }
