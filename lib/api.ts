@@ -94,13 +94,16 @@ export const searchMulti = async (
         page: page,
       },
     });
-    return response.data;
+    return response.data; // This was missing!
   } catch (error) {
     console.error("Error searching movies:", error);
+    throw error; // This was missing!
   }
 };
 
-export const fetchMovieDetails = async (id: number): Promise<Movie> => {
+export const fetchMovieDetails = async (
+  id: number | string
+): Promise<Movie> => {
   try {
     const response = await tmdbApi.get(`/movie/${id}`, {
       params: {
