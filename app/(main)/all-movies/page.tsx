@@ -87,11 +87,7 @@ export default function AllMoviesPage() {
       return;
     }
 
-    if (isSearching && searchTerm.trim()) {
-      performSearch(searchTerm.trim(), currentPage);
-    } else {
-      fetchData();
-    }
+    fetchData();
   }, [currentPage, router, fetchData]);
 
   const handlePageChange = (pageNumber: number) => {

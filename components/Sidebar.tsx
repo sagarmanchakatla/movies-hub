@@ -46,6 +46,11 @@ export default function Sidebar({ isOpen = true, onToggle }: SidebarProps) {
       label: "Favorites",
       icon: <Star className="h-4 w-4" />,
     },
+    {
+      href: "/profile",
+      label: "Profile",
+      icon: <Star className="h-4 w-4" />,
+    },
   ];
 
   // Don't render until mounted to avoid hydration issues

@@ -270,7 +270,7 @@ export function MovieDetailClient({ movie }: MovieDetailClientProps) {
                     </h1>
                     {movie.tagline && (
                       <p className="text-m text-yellow-400 italic mb-4">
-                        "{movie.tagline}"
+                        &quot;{movie.tagline}&quot;
                       </p>
                     )}
                   </div>
