@@ -11,7 +11,7 @@ interface MoviePageProps {
 }
 
 export default async function MovieDetailPage({ params }: MoviePageProps) {
-  const { id } = await params;
+  const { id } = params;
   const movieId = Number(id);
   if (isNaN(movieId)) return notFound();
 
