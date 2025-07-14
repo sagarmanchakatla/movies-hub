@@ -4,13 +4,16 @@ import { notFound } from "next/navigation";
 import { fetchMovieDetails } from "@/lib/api";
 import { MovieDetailClient } from "@/components/MovieDetailClient";
 
-// ✅ Next.js expects this signature for dynamic routes
+// ✅ Updated for Next.js 15+ - params is now a Promise
 export default async function MovieDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const movieId = Number(params.id);
+  // Await the params Promise
+  const { id } = await params;
+
+  const movieId = Number(id);
   if (isNaN(movieId)) return notFound();
 
   const movie = await fetchMovieDetails(movieId);
