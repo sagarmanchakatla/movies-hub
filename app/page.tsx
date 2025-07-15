@@ -636,7 +636,7 @@ export default function LandingPage() {
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a
-                href="https://github.com/sagarmanchakatla/dynamic-dashboard" // Update this to your Movie Explorer App repo
+                href="https://github.com/sagarmanchakatla/movies-hub" // Update this to your Movie Explorer App repo
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gray-400 transition-colors"

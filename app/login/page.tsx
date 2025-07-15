@@ -76,7 +76,7 @@ export default function Login() {
         localStorage.setItem("rememberMe", "true");
       }
 
-      setLoginSuccess("Login successful! Redirecting to dashboard...");
+      setLoginSuccess("Login successful! Enjoy your movies...");
 
       // Small delay for the success message to be visible
       setTimeout(() => {
